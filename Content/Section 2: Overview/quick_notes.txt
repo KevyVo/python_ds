@@ -1,0 +1,10 @@
+Why we use Data Structures?
+- We use it because it make our program more effiecent, by decreasing the O(n)
+- If we want to increse the running time complexity, we need to use more memory
+- If we want to increse the space complexity, we need decrease time complexity
+
+What is the different between a ADT(Abstract Data Types) and a Data Structures?
+- ADT is just the model (blueprint), like in stack we have push(), pop() and peek()
+- Data Structures define the implementation or actual data and we want o(1) if possible
+    - Ex. arrays, linked list, binary trees
+
