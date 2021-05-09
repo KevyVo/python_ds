@@ -1,7 +1,7 @@
 l1 = [1,2,3,4,5,6,7,8,9]
 
 # Reverse a list of number backwards
-def reverse(x):
+def reverseX(x):
     newL = []
     #Will count the loops it need to iterate
     for i in range(len(x)):
@@ -30,4 +30,4 @@ if __name__ == '__main__':
     reverse(n)
     print(n)
 
-print(reverse(l1))
+print(reverseX(l1))
