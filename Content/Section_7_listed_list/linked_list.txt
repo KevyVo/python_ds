@@ -1,0 +1,22 @@
+Linked List
+
+OVERVIEW
+- It is another DS that can store items and remove iten in constant time while array need to shift it contents that cause O(n) time
+- Array may have hole in the data struture
+- First node (head node)
+- Last node (points to NULL)
+- very nodes stores data itslef and a reference to the next node in the linked List
+- linked list need more mem that array but faster
+- no gaps in linked list
+- In linked list the data is no placed next to each other so there is no random indexing
+- Problem is the search on the linked list is still O(n) 
+
+OPERATIONS
+- insert at the beggining to the begin of list is o(1)
+- removal of the beggining of the list is o(1)
+- insertion of the end and middle list is o(n)
+- removal of the end node of list is o(n)
+- linked list are dynamic ds
+- no need to resize like arrays
+- can store many types of items
+- 

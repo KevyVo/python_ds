@@ -1,0 +1,7 @@
+Doubly Linked List
+- head node (start of the list)
+- tail node (Last node of the list)
+- Every node had data and a pointer of next and pervious node
+- removal and insertation of beginning and ending of the list can be done on o(1)
+- Cost more memory cause now there are two pointers
+- 
