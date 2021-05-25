@@ -70,7 +70,6 @@ class DoublyLinkedList:
         #Delete the Node
         del curr_node
 
-
     # we can traverse a doubly linked list in both directions
     def traverse_forward(self):
 
