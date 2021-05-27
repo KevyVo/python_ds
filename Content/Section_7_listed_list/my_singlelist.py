@@ -80,6 +80,18 @@ class Linkedlist:
     # Insert Node
 
     # Middle Node
+    def middle(self):
+        
+        #Pointers
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        
+        return slow
+
 
     # Remove Node
 
@@ -97,8 +109,10 @@ if __name__ == "__main__":
     l1.append("B")
     l1.append("C")
     l1.prepend("Z")
+    l1.prepend("X")
     l1.traverse()
     print("Nums: ", l1.get_numnodes())
+    print("The middle node data is ", l1.middle().data)
 
 
             

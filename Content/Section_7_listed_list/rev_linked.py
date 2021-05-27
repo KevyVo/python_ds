@@ -118,6 +118,8 @@ if __name__ == '__main__':
     linked_list.insert_end(2)
     linked_list.insert_end(3)
 
+    print(linked_list.middle_node().data)
+
     linked_list.traverse()
 
     print("---")
