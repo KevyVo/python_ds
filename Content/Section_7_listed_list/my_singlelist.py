@@ -116,9 +116,13 @@ class Linkedlist:
     # Swap Node(does not work)
     def swap(self, val1, val2):
 
+        if val1 == val2:
+            print("These values are the day, no swap")
+            return
+
         #Setup pointers
         curr = self.head
-        pev = curr
+        pev = None
         v1 = None
         v2 = None
         p1 = None
@@ -137,20 +141,34 @@ class Linkedlist:
             pev = curr
             curr = curr.next
 
+        #print("1: ", v1.data, p1.data)
+        #print("2: ", v2.data, p2.data)
         #Check if v1 and v2 is in the list at all
         if v1 is None and v2 is None:
             print("Both of these values do not exist in this list.")
         #Check if v1 or v2 is in the list at all
-        elif v1 is None or v2 is None:
+        if v1 is None or v2 is None:
             print("Ones of these values does not exist in the list.")
-        else:
+        
+
         #Swap the nodes
-            p1.next = v1
-            v1.next = v2.next
-            v2.next = p2
+        # If the pev1 exist
+        if p1:
+            p1.next = v2
+        else:
+            #There is a head node
+            self.head = v2
+
+        # If the pev2 exist
+        if p2:
             p2.next = v1
-            print("The nodes have been swap")
-        return
+        else:
+            #There is a head node
+            self.head = v1
+
+        #Swap the last two pointers
+        v1.next, v2.next = v2.next, v1.next
+        print("The nodes have been swap")
 
 
     # Reverse Node
@@ -169,7 +187,7 @@ if __name__ == "__main__":
     l1.traverse()
     l1.insert("D", "Y")
     l1.insert("B", "Y")
-    l1.swap("A", "C")
+    l1.swap("A", "X")
     l1.traverse()
     #print("Nums: ", l1.get_numnodes())
     #print("The middle node data is ", l1.middle().data)
