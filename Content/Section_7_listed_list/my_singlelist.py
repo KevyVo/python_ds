@@ -78,6 +78,24 @@ class Linkedlist:
         return self.numNodes
 
     # Insert Node
+    def insert(self, pev_data, data):
+        
+        found = False
+        curr = self.head
+        new_node = Node(data)
+
+        while curr.data != pev_data and curr.next is not None:
+            curr = curr.next
+
+        if curr.next is None:
+            print ("There is no node with the data: " + pev_data)
+            return
+        else:
+            new_node.next = curr.next
+            curr.next = new_node
+            print("New node has been inserted.")
+            self.numNodes += 1
+            return
 
     # Middle Node
     def middle(self):
@@ -95,7 +113,45 @@ class Linkedlist:
 
     # Remove Node
 
-    # Swap Node
+    # Swap Node(does not work)
+    def swap(self, val1, val2):
+
+        #Setup pointers
+        curr = self.head
+        pev = curr
+        v1 = None
+        v2 = None
+        p1 = None
+        p2 = None
+
+        #Loop through once
+        while curr != None:
+
+            if curr.data == val1:
+                v1 = curr
+                p1 = pev
+            if curr.data == val2:
+                v2 = curr
+                p2 = pev
+            
+            pev = curr
+            curr = curr.next
+
+        #Check if v1 and v2 is in the list at all
+        if v1 is None and v2 is None:
+            print("Both of these values do not exist in this list.")
+        #Check if v1 or v2 is in the list at all
+        elif v1 is None or v2 is None:
+            print("Ones of these values does not exist in the list.")
+        else:
+        #Swap the nodes
+            p1.next = v1
+            v1.next = v2.next
+            v2.next = p2
+            p2.next = v1
+            print("The nodes have been swap")
+        return
+
 
     # Reverse Node
 
@@ -111,8 +167,12 @@ if __name__ == "__main__":
     l1.prepend("Z")
     l1.prepend("X")
     l1.traverse()
-    print("Nums: ", l1.get_numnodes())
-    print("The middle node data is ", l1.middle().data)
+    l1.insert("D", "Y")
+    l1.insert("B", "Y")
+    l1.swap("A", "C")
+    l1.traverse()
+    #print("Nums: ", l1.get_numnodes())
+    #print("The middle node data is ", l1.middle().data)
 
 
             
