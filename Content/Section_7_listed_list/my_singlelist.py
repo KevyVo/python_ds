@@ -112,6 +112,51 @@ class Linkedlist:
 
 
     # Remove Node
+    def remove(self, key):
+       
+        #List is empty
+        if self.head is None:
+            print("The list is empty, therefore there is nothing to remove")
+            return
+        else:
+            #pointers
+            curr = self.head
+            found = False
+            pev = None
+
+        #traverse the list
+        while curr is not None:
+            if curr.data == key:
+                found = True
+                break
+            pev = curr
+            curr = curr.next
+        
+        if found == True:
+            #Case 1: Remove from start
+            if curr == self.head:
+                self.head = curr.next
+                curr.next = None
+                del curr
+                print("The start node is not deleted")
+            
+            #Case 2: Remove from the end
+            elif curr.next == None:
+                pev.next = None
+                del curr
+                print("The Node at the end has been remove")
+
+            #Case 3: Remove from the middle
+            else:
+                pev.next = curr.next
+                curr.next = None
+                del curr
+                print("The node in the middle has been remove")
+            return
+        else:
+            #The Key is not in the list at all
+            print("This value does not exist in the list.")
+            return
 
     # Swap Node(does not work)
     def swap(self, val1, val2):
@@ -150,7 +195,6 @@ class Linkedlist:
         if v1 is None or v2 is None:
             print("Ones of these values does not exist in the list.")
         
-
         #Swap the nodes
         # If the pev1 exist
         if p1:
@@ -185,9 +229,10 @@ if __name__ == "__main__":
     l1.prepend("Z")
     l1.prepend("X")
     l1.traverse()
-    l1.insert("D", "Y")
-    l1.insert("B", "Y")
-    l1.swap("A", "X")
+    #l1.insert("D", "Y")
+    #l1.insert("B", "Y")
+    #l1.swap("A", "X")
+    l1.remove("B")
     l1.traverse()
     #print("Nums: ", l1.get_numnodes())
     #print("The middle node data is ", l1.middle().data)
