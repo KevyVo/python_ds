@@ -12,6 +12,18 @@ class Linkedlist:
         #Track the number of nodes in the list
         self.numNodes = 0
 
+#Fuction Below
+
+#Traverse
+#Append
+#Prepend
+#getnodenums
+#insert
+#middle
+#remove 
+#swap
+#reverse
+
     # Traverse Function
     def traverse(self):
         print ("There are a total of " + str(self.numNodes) + " nodes in the list.")
@@ -214,8 +226,36 @@ class Linkedlist:
         v1.next, v2.next = v2.next, v1.next
         print("The nodes have been swap")
 
-
     # Reverse Node
+    def reverse(self):
+
+        #Case 1: The list is empty
+        if self.head is None:
+            print("The list is empty, error")
+
+        #Case 2: There is only one node
+        elif self.head.next is None:
+            print("There is only one node in the list")
+
+        #Case 3: Reverse the list
+        else:
+            #set the pointers
+            curr = self.head
+            pev = None
+            nxt = None
+
+            #Traverse the list
+            while curr is not None:
+                nxt = curr.next
+                curr.next = pev
+                pev = curr
+                curr = nxt
+            
+            #Set the new head pointer
+            self.head = pev
+
+        return
+
 
 
 
@@ -226,13 +266,14 @@ if __name__ == "__main__":
     l1.append("A")
     l1.append("B")
     l1.append("C")
-    l1.prepend("Z")
-    l1.prepend("X")
+    #l1.prepend("Z")
+    #l1.prepend("X")
     l1.traverse()
     #l1.insert("D", "Y")
     #l1.insert("B", "Y")
     #l1.swap("A", "X")
-    l1.remove("B")
+    #l1.remove("B")
+    l1.reverse()
     l1.traverse()
     #print("Nums: ", l1.get_numnodes())
     #print("The middle node data is ", l1.middle().data)
