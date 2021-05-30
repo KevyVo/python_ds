@@ -92,7 +92,6 @@ class Linkedlist:
     # Insert Node
     def insert(self, pev_data, data):
         
-        found = False
         curr = self.head
         new_node = Node(data)
 
@@ -255,7 +254,6 @@ class Linkedlist:
             self.head = pev
 
         return
-
 
 
 
