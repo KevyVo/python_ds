@@ -1,0 +1,33 @@
+STACKS
+
+- Are LIFO - last item inserted is the first one we take out
+- Operation are pop(), push(), peek()
+- graph algoithm rely heavily on stacks such as depth-first search can be implemented with stacks
+- there are 2 main types of memory. 
+    - stack monmory and heap memory
+- stack memory is in the RAM
+    - small in size
+    - fast access
+    - stores function calls and local variables
+    - no fragmentation
+- objects are store on the heap memory
+    - Large in size
+    - slow access
+    - stores objects
+    - may become fragmented
+
+Data struture:
+    push()
+    pop()
+    peek()
+    is_empty()
+    stack_size()
+
+Real world cases
+
+- Back buttons on web browsers
+- undo Operation in software
+- stores local variables and functions calls
+
+Stack are a abstract data types
+- underlaying data struture can be an array or linked list
